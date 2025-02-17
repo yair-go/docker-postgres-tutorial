@@ -4,7 +4,7 @@
 ## התקנה
 
 1. הורד והתקן את Docker Desktop:
-   - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+   - [Docker Desktop](https://www.docker.com/)
 
 ## שימוש ב־Volumes
 
