@@ -78,7 +78,7 @@ docker run -d --name pgadmin \
 ```bash
 docker inspect #uniqe_container_hash
 ```
-נוכל לראות את הערך של IP_ADDRESS
+נוכל לראות את הערך של IPADDRESS
 
 ## הוספת שרת ה־PostgreSQL ב־pgAdmin
 
