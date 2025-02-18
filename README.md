@@ -70,6 +70,16 @@ docker run -d --name pgadmin \
 
 ניתן לקבוע את שמות משתני הסביבה
 
+## מציאת כתובת הip של הקונטיינר שמריץ את השרת
+
+כדי שנוכל להתחבר לשרת אנחנו צריכים את כתובת הip שלו בתוך הרשת הפנימית שdocker מנהל
+לכל קונטיינר יש מזהה ייחודי, נריץ את פקודת inspect אם המזהה הייחודי
+
+```bash
+docker inspect #uniqe_container_hash
+```
+נוכל לראות את הערך של IP_ADDRESS
+
 ## הוספת שרת ה־PostgreSQL ב־pgAdmin
 
 1. פתח את pgAdmin בדפדפן:
@@ -89,13 +99,15 @@ docker run -d --name pgadmin \
 
 5. עבור ללשונית **Connection**:
 
-   - **Host**: `my_postgres` (שם הקונטיינר של PostgreSQL).
+   - **Host**: כתובת הip של הקונטיינר שמריץ את השרת.
    - **Port**: `5432`.
    - **Username**: `myuser` (או מה שהגדרת).
    - **Password**: `mypassword`.
    - **Save Password?** ✔️
 
 6. לחץ על **Save**.
+
+   ![database connection](https://github.com/yair-go/docker-postgres-tutorial/blob/main/database%20connection.png)
 
 
 
