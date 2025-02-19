@@ -73,10 +73,10 @@ docker run -d --name pgadmin \
 ## מציאת כתובת הip של הקונטיינר שמריץ את השרת
 
 כדי שנוכל להתחבר לשרת אנחנו צריכים את כתובת הip שלו בתוך הרשת הפנימית שdocker מנהל
-לכל קונטיינר יש מזהה ייחודי, נריץ את פקודת inspect אם המזהה הייחודי
+לכל קונטיינר יש מזהה ייחודי, נריץ את פקודת inspect אם המזהה הייחודי או אם שם הקונטיינר
 
 ```bash
-docker inspect #uniqe_container_hash
+docker inspect my_postgres
 ```
 נוכל לראות את הערך של IPADDRESS
 
