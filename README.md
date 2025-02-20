@@ -29,7 +29,11 @@ docker run -d --name my_postgres \
   -p 5432:5432 \
   postgres
 ```
+או בשורה אחת, למשתמשי Windows PowerShell 
 
+```bash
+docker run -d --name my_postgres -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydatabase -v mydbdata:/var/lib/postgresql/data -p 5432:5432 postgres
+```
 ### הסבר על הפקודות:
 
 הרצת הקונטיינר והפעלתו כשרת בסיס נתונים דורשת מספר משתני סביבה, שם משתמש וסיסמא, ושם עבור בסיס הנתונים, ניתן לקבוע כרצונכם
@@ -59,6 +63,12 @@ docker run -d --name pgadmin \
   -e PGADMIN_DEFAULT_PASSWORD=admin123 \
   -v pgadmin_data:/var/lib/pgadmin \
   dpage/pgadmin4
+```
+
+או בשורה אחת, למשתמשי Windows PowerShell 
+
+```bash
+docker run -d --name pgadmin -p 5050:80 -e PGADMIN_DEFAULT_EMAIL=admin@example.com -e PGADMIN_DEFAULT_PASSWORD=admin123 -v pgadmin_data:/var/lib/pgadmin dpage/pgadmin4
 ```
 
 ### הסבר על הפקודות:
