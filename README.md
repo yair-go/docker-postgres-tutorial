@@ -88,7 +88,9 @@ docker run -d --name pgadmin -p 5050:80 -e PGADMIN_DEFAULT_EMAIL=admin@example.c
 ```bash
 docker inspect my_postgres
 ```
-נוכל לראות את הערך של IPADDRESS
+נוכל לראות את הערך של IPAddress
+
+**הערה חשובה**: במקרה של סגירת הקונטיינר והפעלתו מחדש כתובת הip יכולה להשתנות, במיוחד אם מריצים עוד קונטיינרים
 
 ## הוספת שרת ה־PostgreSQL ב־pgAdmin
 
