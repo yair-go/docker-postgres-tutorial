@@ -122,5 +122,9 @@ docker inspect my_postgres
    ![database connection](https://github.com/yair-go/docker-postgres-tutorial/blob/main/database%20connection.png)
 
 
+## התחברות מתוך הטרמינל של הקונטיינר
 
+```bash
+psql -h 172.17.0.2 -U myuser mydatabase 
+```
 
