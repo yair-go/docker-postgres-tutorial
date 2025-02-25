@@ -1,3 +1,6 @@
+## הסבר על הקוד
+## https://chatgpt.com/canvas/shared/67bd71284d448191bcb944886c5e4da7
+
 import tkinter as tk
 from tkinter import ttk
 from sqlalchemy import create_engine, text
