@@ -1,4 +1,4 @@
-# README - תצוגת נתונים עם Tkinter ו-SQLAlchemy
+# תצוגת נתונים עם Tkinter ו-SQLAlchemy
 
 ## תיאור
 
@@ -35,7 +35,7 @@
 להרצת הקובץ:
 
 ```sh
-python script.py
+python gui.py
 ```
 
 ## הערות
