@@ -119,7 +119,7 @@ docker inspect my_postgres
 
 6. לחץ על **Save**.
 
-   ![database connection](https://github.com/yair-go/docker-postgres-tutorial/blob/main/database%20connection.png)
+   ![database connection](https://github.com/yair-go/docker-postgres-tutorial/blob/main/images/database%20connection.png)
 
 
 ## התחברות מתוך הטרמינל של הקונטיינר
