@@ -13,11 +13,9 @@ def create_instances():
     c3 = Customer("Moshe", "Levi", "Jerusalem")
     c4 = Customer("Josh", "Cohen", "Tel Aviv")
     c5 = Customer("David", "Cohen", "Tel Aviv")
-    session.add(c1)
-    session.add(c2)
-    session.add(c3)
-    session.add(c4)
-    session.add(c5)
+
+    session.add_all([c1, c2, c3, c4, c5])
+
     session.commit()
 
     for i in range(10):
