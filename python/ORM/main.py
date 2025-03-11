@@ -32,8 +32,15 @@ def create_all_tables(engine):
     Base.metadata.create_all(bind=engine)
 
 
-db_path = Path("database/mydb.db").absolute()
-engine = create_engine(rf"sqlite:///{db_path}", echo=True)
+# db_path = Path("database/mydb.db").absolute()
+# engine = create_engine(rf"sqlite:///{db_path}", echo=True)
+
+# הגדרת חיבור עם SQLAlchemy
+DATABASE_URL = "postgresql://myuser:mypassword@localhost:5432/mydatabase"
+
+# יצירת מנוע SQLAlchemy
+engine = create_engine(DATABASE_URL)
+
 session = Session(engine)
 
 create_all_tables(engine)
@@ -42,23 +49,22 @@ create_all_tables(engine)
 # # Create instances
 create_instances()
 
-# Queries
-results = session.query(Customer).all()
-print(results)
-print(type(results))
-
-filtered_results = session.query(Customer).filter(Customer.city == "Jerusalem")
-for customer in filtered_results:
-    print(customer)
-
-print(type(filtered_results))
-
-filtered_results = filtered_results.all()
-print(filtered_results)
-
 
 def main():
-    pass
+    # Queries
+    results = session.query(Customer).all()
+    print(results)
+    print(type(results))
+    
+    filtered_results = session.query(Customer).filter(Customer.city == "Jerusalem")
+    for customer in filtered_results:
+        print(customer)
+    
+    print(type(filtered_results))
+    
+    filtered_results = filtered_results.all()
+    print(filtered_results)
+
 
 
 # Press the green button in the gutter to run the script.
