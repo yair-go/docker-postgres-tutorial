@@ -6,6 +6,8 @@ from pathlib import Path
 
 from model import Base, Customer, Invoice
 
+# הגדרת חיבור עם SQLAlchemy
+DATABASE_URL = "postgresql://myuser:mypassword@localhost:5432/mydatabase"
 
 def create_instances():
     c1 = Customer("Moshe", "Cohen", "Jerusalem")
@@ -33,9 +35,6 @@ def create_all_tables(engine):
 # db_path = Path("database/mydb.db").absolute()
 # engine = create_engine(rf"sqlite:///{db_path}", echo=True)
 
-# הגדרת חיבור עם SQLAlchemy
-DATABASE_URL = "postgresql://myuser:mypassword@localhost:5432/mydatabase"
-
 # יצירת מנוע SQLAlchemy
 engine = create_engine(DATABASE_URL)
 
@@ -43,12 +42,11 @@ session = Session(engine)
 
 create_all_tables(engine)
 
-#
-# # Create instances
-create_instances()
-
 
 def main():
+    # Create instances
+    create_instances()
+    
     # Queries
     results = session.query(Customer).all()
     print(results)
