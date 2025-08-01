@@ -12,6 +12,8 @@ services:
       - mydbdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+     networks:
+      - backend
 
   pgadmin:
     image: dpage/pgadmin4
@@ -23,7 +25,13 @@ services:
       - "5050:80"
     volumes:
       - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - backend
 
 volumes:
   mydbdata:
   pgadmin_data:
+
+networks:
+  backend:
+    driver: bridge
